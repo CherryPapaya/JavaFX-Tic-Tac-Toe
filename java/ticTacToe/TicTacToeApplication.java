@@ -43,7 +43,7 @@ public class TicTacToeApplication extends Application {
                 game.getGrid()[row][col].setOnAction((event) -> {
                     game.handleMove(r, c);
                     label.setText("Turn: " + game.getTurn());
-                    if (game.win()) {
+                    if (game.win() || game.getNumberOfMoves() == 9) {
                         label.setText("The end!");
                         for (int i = 0; i < 3; i++) {
                             for (int j = 0; j < 3; j++) {
